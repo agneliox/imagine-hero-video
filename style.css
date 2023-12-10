@@ -1,0 +1,86 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Lato","Avenir Next",Arial,sans-serif;
+    margin: 0;
+    background: #ffffff;
+    background-size: cover;            
+}
+
+video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* padding: .3em; */
+    width: 100%;
+    height: 100vh;
+    -o-object-fit: cover;
+        object-fit: cover;
+    -o-object-position: center;
+        object-position: center;
+}
+
+.overlay {
+    min-height: 100vh;
+    display: -webkit-box;
+    display: -ms-flexbox;    
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr; 
+    grid-template-rows: 1fr 1fr; 
+    gap: .3em .3em; 
+    grid-template-areas: 
+        "wide wide single single2"
+        "wide wide single3 single4";
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+}
+       
+.overlay div {
+    background: #000 none repeat scroll 0 0;
+    /* background: url("pexels-omar-tapia-19317633.jpg") !important; */
+    color: rgba(255, 255, 255,1);
+    font-weight: 600;            
+    mix-blend-mode: overlay;
+    padding: 5px 15px;             
+    height: 100%;
+}
+
+.wide { grid-area: wide; 
+    /* height: 100vh; */
+}
+.single { grid-area: single; }
+.single2 { grid-area: single2; }
+.single3 { grid-area: single3; }
+.single4 { grid-area: single4; }
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    body {background: red;}
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    body {background: green;}
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    body {background: blue;}
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    body {background: orange;}
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    body {background: pink;}
+}
