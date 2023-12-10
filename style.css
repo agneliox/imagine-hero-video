@@ -10,7 +10,7 @@ body {
 }
 
 video {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     /* padding: .3em; */
@@ -27,12 +27,7 @@ video {
     display: -webkit-box;
     display: -ms-flexbox;    
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr; 
-    grid-template-rows: 1fr 1fr; 
     gap: .3em .3em; 
-    grid-template-areas: 
-        "wide wide single single2"
-        "wide wide single3 single4";
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
@@ -51,36 +46,80 @@ video {
     height: 100%;
 }
 
-.wide { grid-area: wide; 
-    /* height: 100vh; */
-}
+.wide { grid-area: wide; }
 .single { grid-area: single; }
 .single2 { grid-area: single2; }
 .single3 { grid-area: single3; }
 .single4 { grid-area: single4; }
 
-
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
     body {background: red;}
+
+    .overlay{  
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;        
+        grid-auto-flow: row;
+        grid-template-areas:
+          "wide"
+          "single"
+          "single2"
+          "single3"
+          "single4";
+      }      
+
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
     body {background: green;}
+    .overlay{  
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+        grid-auto-flow: row;
+        grid-template-areas:
+          "wide"
+          "single"
+          "single2"
+          "single3"
+          "single4";
+      } 
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
     body {background: blue;}
+    .overlay {  
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-auto-flow: row;
+        grid-template-areas:
+          "wide single"
+          "wide single2"
+          "single3 single4";
+      }         
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
     body {background: orange;}
+    .overlay {
+        grid-template-columns: 1fr 1fr 1fr 1fr; 
+        grid-template-rows: 1fr 1fr; 
+        grid-template-areas: 
+            "wide wide single single2"
+            "wide wide single3 single4";       
+    }
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
     body {background: pink;}
+    .overlay {   
+        grid-template-columns: 1fr 1fr 1fr 1fr; 
+        grid-template-rows: 1fr 1fr; 
+        grid-template-areas: 
+            "wide wide single single2"
+            "wide wide single3 single4";        
+    }
 }
