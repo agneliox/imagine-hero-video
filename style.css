@@ -27,7 +27,7 @@ video {
     display: -webkit-box;
     display: -ms-flexbox;    
     display: grid;
-    gap: .3em .3em; 
+    gap: 1em 1em; 
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
@@ -42,7 +42,7 @@ video {
     color: rgba(255, 255, 255,1);
     font-weight: 600;            
     mix-blend-mode: overlay;
-    padding: 5px 15px;             
+    padding: 15px 15px;             
     height: 100%;
 }
 
@@ -103,13 +103,15 @@ video {
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
     body {background: orange;}
-    .overlay {
-        grid-template-columns: 1fr 1fr 1fr 1fr; 
-        grid-template-rows: 1fr 1fr; 
-        grid-template-areas: 
-            "wide wide single single2"
-            "wide wide single3 single4";       
-    }
+    .overlay {  
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-auto-flow: row;
+        grid-template-areas:
+          "wide single"
+          "wide single2"
+          "single3 single4";
+      } 
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
@@ -123,3 +125,4 @@ video {
             "wide wide single3 single4";        
     }
 }
+
