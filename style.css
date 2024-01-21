@@ -10,12 +10,10 @@ body {
 }
 
 video {
-    position: absolute;
-    top: 40px;
-    left: 0;
-    /* padding: .3em; */
+    position: fixed;
+    left: 0;   
+    height: 100vh;
     width: 100%;
-    height: calc(100vh - 40px);
     -o-object-fit: cover;
         object-fit: cover;
     -o-object-position: center;
@@ -24,7 +22,7 @@ video {
 
 header{
     background: tan;
-    position: fixed;
+    position: relative;
     width: 100%;
     text-align: center;
     color: white;
@@ -39,13 +37,13 @@ nav a{
 }
 
 .overlay {
-    min-height:  calc(100vh - 40px);
-    /* top: 40px; */
-    padding-top: 40px;
+    min-height: 100vh;
+    position: absolute;
+    /* padding: .5em; */
     display: -webkit-box;
     display: -ms-flexbox;    
     display: grid;
-    gap: 1em 1em; 
+    gap: .5em .5em; 
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
@@ -70,9 +68,22 @@ nav a{
 .single3 { grid-area: single3; }
 .single4 { grid-area: single4; }
 
+/* including Header (for big screens only) */
+/* .withHeader{
+    display: block;
+}
+.noHeader{
+    display: none;
+
+    .overlay{
+        padding-top: 0;
+    }
+} */
+
+
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
-    body {background: red;}
+    /* body {background: red;} */
 
     .overlay{  
         grid-template-columns: 1fr;
@@ -85,20 +96,11 @@ nav a{
           "single3"
           "single4";
       }      
-
-}
-
-/* full width (for big screens only) */
-.boxed{
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-    
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
-    body {background: green;}
+    /* body {background: green;} */
     .overlay{  
         grid-template-columns: 1fr;
         grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
@@ -114,7 +116,7 @@ nav a{
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
-    body {background: blue;}
+    /* body {background: blue;} */
     .overlay {  
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr 1fr 1fr;
@@ -128,7 +130,7 @@ nav a{
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
-    body {background: orange;}
+    /* body {background: orange;} */
     .overlay {  
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr 1fr 1fr;
@@ -142,7 +144,7 @@ nav a{
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
-    body {background: pink;}
+    /* body {background: pink;} */
     .overlay {   
         grid-template-columns: 1fr 1fr 1fr 1fr; 
         grid-template-rows: 1fr 1fr; 
