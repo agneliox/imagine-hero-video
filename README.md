@@ -2,6 +2,8 @@
 
 See it in action: https://agneliox.github.io/imagine-hero-video/
 
+Resize screen for resposivess. Switch to portrait/landscape on mobile.
+
 ## Preview thumbnail
 ![image](https://github.com/agneliox/imagine-hero-video/assets/151796732/9d5bfd84-c001-4e4d-af94-27dc9bc277f6)
 
