@@ -1,4 +1,5 @@
-# Grids with Video 
+# HTML/CSS Grids with Video 
+HTML5 Responsive grid layout with video background.
 
 See it in action: https://agneliox.github.io/imagine-hero-video/
 
